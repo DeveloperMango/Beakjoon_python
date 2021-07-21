@@ -1,0 +1,40 @@
+//10757번: 큰 수 A+B
+//https://www.acmicpc.net/problem/10757
+//파이썬은 큰수처리가 되므로 C언어로 변경하여 작성
+
+//9223372036854775807 9223372036854775808
+
+#include<stdio.h>
+
+int main(void){
+	CString str1="9223372036854775807";
+	CString str2="9223372036854775808";
+	CString res, strtmp;
+	int tmp=0;
+	//scanf("%s %s",&str1,&str2);
+
+
+	int len;
+	if(str1.GetLength()-1>str2.GetLength()-1){
+		len = str1.GetLength();
+	}else{
+		len = str2.GetLength();
+	}
+	for(int i=len-1; i>=0;i--)
+	{
+		tmp += atoi(str1.Mid(i,1))+atoi(str2.Mid(i,1));
+
+		if(tmp>9)	{
+			strtmp.Format("%d",tmp%10);
+			res += strtmp;
+			tmp = 1;
+		}else {
+			strtmp.Format("%d",tmp);
+			res += strtmp;
+			tmp = 0;
+		}
+		//printf(strtmp);
+	}
+	printf(res);
+	return 0;
+}
