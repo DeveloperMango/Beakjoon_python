@@ -1,44 +1,26 @@
 #1193번: 분수찾기
 #문제참고: https://www.acmicpc.net/problem/1193
 
-'''
-0,0 -,+
+x = int(input())
+num_list = []
 
-0,1 +,-
-1,0 +,-
+num = 0
+num_count = 0
 
-2,0 -,+
-1,1 -,+
-0,2 -,+
+while num_count < x:
+    num += 1
+    num_count += num
 
-0,3 +,-
-1,2 +,-
-2,1 +,-
-3,0 +,-
-'''
+num_count -= num
 
-num = int(input())
-i=0
-j=0
-k=1
-cnt = 1
+if num % 2 == 0:
+    i = x - num_count
+    j = num - i + 1
+else:
+    i = num - (x - num_count) + 1
+    j = x - num_count
 
-while True:
-    if cnt==num:
-        print(i+1,"/",j+1 ,sep="")
-        break
-    else: k+=1
-        
-    for _ in range(k):
-        if k%2==0:
-            i+=1
-            if(j!=0):j-=1
-        elif k%2==1:
-            j+=1
-            if(i!=0):   i-=1       
-        cnt+=1
-        if cnt==num:    break  
-   
+print(f"{i}/{j}")
 
 
 

@@ -6,7 +6,6 @@ w_li = {} #값 저장
  
 def w(a,b,c):
     if (a,b,c) in w_li:
-        print(a,b,c,w_li)
         return w_li[(a,b,c)]
     
     else:
