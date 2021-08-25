@@ -5,10 +5,17 @@
 import sys
 
 num = int(sys.stdin.readline())
+numlist = []
 
-numlist = list(map(int,sys.stdin.readline().split()))
-rev_list = numlist[::-1]
+for i in range(num):
+    numlist.append(list(map(int,sys.stdin.readline().split())))
 
-dp = [1 for _ in range(num)]    #증가
-dm = [1 for _ in range(num)]    #감소
+numlist.sort()
 
+dp = [1]*num
+for i in range(num):
+    for j in range(i):
+        if numlist[i][1] > numlist[j][1] and dp[i] < dp[j]+1:
+            dp[i] = dp[j] + 1
+
+print(num-max(dp))
