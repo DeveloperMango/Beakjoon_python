@@ -4,17 +4,24 @@
 import sys
 
 a,b= map(int,sys.stdin.readline().split())
-result = 1
+
+def gcd(a,b):
+    if b == 0:
+        return a;
+    else:
+        return gcd(b, a%b);
+
 
 if a%b==0 or b%a==0:
     print(a,b, sep="\n") if a<b else print(b,a,sep="\n")
     
 else:
-    result = b-a if a<b else a-b
+    result = gcd(a,b)
+    print(result,end=" ")
+    result = result * (a//result) * (b//result)
+    print(result)
 
-24 18
-    if(b%3==0):
-        print(a*3)
-    else:
-        print(a*2)
+
+
+
     

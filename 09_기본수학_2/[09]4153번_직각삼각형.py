@@ -1,3 +1,6 @@
+#4153번: 직각삼각형
+#https://www.acmicpc.net/problem/4153
+
 while True:
     tri = sorted(list(map(int, input().split())))
 

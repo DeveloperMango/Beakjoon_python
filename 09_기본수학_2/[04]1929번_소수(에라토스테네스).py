@@ -1,4 +1,3 @@
-
 #1929번: 소수
 #https://www.acmicpc.net/problem/1929
 

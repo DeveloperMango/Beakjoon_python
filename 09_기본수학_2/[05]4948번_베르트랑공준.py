@@ -1,3 +1,5 @@
+#4948번: 베르트랑 공준
+#https://www.acmicpc.net/problem/4948
 #소수찾기 -> 에라토스테네스의 체
 
 def prime_list(n):
