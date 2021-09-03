@@ -10,4 +10,4 @@ def factorial(n):
     return ans
 
 a,b = map(int,sys.stdin.readline().split())
-print((factorial(a) // factorial(b) // factorial(a-b))%10007)
+print(factorial(a))
