@@ -9,5 +9,8 @@ def factorial(n):
         ans *= i
     return ans
 
-a,b = map(int,sys.stdin.readline().split())
-print(factorial(a))
+cnt = int(sys.stdin.readline())
+for _ in range(cnt):
+    a,b = map(int,sys.stdin.readline().split())
+    bridge = factorial(b) // (factorial(a) * factorial(b-a))
+    print(bridge)
