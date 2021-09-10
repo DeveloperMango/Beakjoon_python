@@ -1,4 +1,4 @@
-#10866번: 
+#10866번: 덱
 #https://www.acmicpc.net/problem/10866
 
 import sys
