@@ -7,11 +7,10 @@ cnt = int(sys.stdin.readline())
 for i in range(cnt):
     floor = int(sys.stdin.readline())
     room = int(sys.stdin.readline())
-    res = 0
-    
+    res = [col for col in range(1,room+1)]
+
     for i in range(floor):
-        for j in range(1,room+1):
-            if i == 0:
-                res += j
-            else:
-                
+        for j in range(1,room):
+            res[j] += res[j-1]
+
+    print(res[-1])
