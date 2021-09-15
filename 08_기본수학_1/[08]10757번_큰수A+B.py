@@ -3,23 +3,27 @@
 
 import sys
 
-a,b = list(map(str,sys.stdin.readline().split()))
+a,b = sys.stdin.readline().split()
 
-print(a,b)
-
-a.reverse()
-b.reverse()
-
-
-cnt = len(a) if len(a) > len(b) else len(b)
+if len(a) < len(b):
+    a,b=b,a
+    
 carry = 0
 res=[]
-for i in range(cnt):
-    sum = a[i] + b[i] + carry
 
+b= '0'*(len(a)-len(b))+b
+
+for i in range(len(a)-1,-1,-1):
+    sum = int(a[i]) + int(b[i]) + carry
+    
     if sum > 9:
         carry = 1
     else:
         carry = 0
 
-    res[i] = sum%10
+    res.append(sum%10)
+
+if carry:
+    res.append(str(1))
+    
+print(*res[::-1],sep="")
