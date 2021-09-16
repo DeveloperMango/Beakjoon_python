@@ -6,7 +6,6 @@
 대표적인 소수 판별 알고리즘으로 빠르고 정확하게 구하는 방법
 '''
 
-
 a,b= map(int,input().split())
 ran=[i for i in range(a,b+1)]
 
