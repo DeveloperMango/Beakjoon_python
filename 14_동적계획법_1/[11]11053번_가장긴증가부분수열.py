@@ -14,5 +14,6 @@ for i in range(num):
         if numlist[i] > numlist[j] and dp[i] < dp[j]:
             dp[i] = dp[j]
     dp[i] += 1
+    print(dp)
     
 print(max(dp))

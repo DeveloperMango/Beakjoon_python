@@ -10,11 +10,16 @@ numlist = []
 for i in range(num):
     numlist.append(list(map(int,sys.stdin.readline().split())))
 
+
+
 numlist.sort()
+print(numlist)
 
 dp = [1]*num
 for i in range(num):
     for j in range(i):
+        print(i, j ,numlist[i][1],numlist[j][1], dp)
+        
         if numlist[i][1] > numlist[j][1] and dp[i] < dp[j]+1:
             dp[i] = dp[j] + 1
 
